@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-get-tasks-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: todo-get-tasks-api
+  template:
+    metadata:
+      labels:
+        app: todo-get-tasks-api
+    spec:
+      containers:
+      - name: todo-get-tasks-api
+        image: acrdevtodoapp01.azurecr.io/todo-get-tasks-api:v1
+        ports:
+        - containerPort: 8000
+        env: 
+        - name: CONNECTION_STRING
+          value: ""
