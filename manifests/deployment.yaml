@@ -15,8 +15,14 @@ spec:
       containers:
       - name: todo-get-tasks-api
         image: acrdevtodoapp01.azurecr.io/todo-get-tasks-api:v1
+        imagePullPolicy: Never
         ports:
         - containerPort: 8000
-        env: 
+        env:
         - name: CONNECTION_STRING
-          value: ""
+          valueFrom:
+            secretKeyRef:
+              name: db-conn-secret
+              key: CONNECTION_STRING
+
+
