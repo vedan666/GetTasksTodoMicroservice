@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: todo-get-tasks-api
-        image: acrdevtodoapp01.azurecr.io/todo-get-tasks-api:v1
+        image: acrdevtodoappved6942001.azurecr.io/todo-get-tasks-api:v1
         imagePullPolicy: Never
         ports:
         - containerPort: 8000
