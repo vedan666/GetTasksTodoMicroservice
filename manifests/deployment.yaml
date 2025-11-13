@@ -19,9 +19,6 @@ spec:
         - containerPort: 8000
         env:
         - name: CONNECTION_STRING
-          valueFrom:
-            secretKeyRef:
-              name: db-conn-secret
-              key: CONNECTION_STRING
+          value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sqldb-dev-todoapp-server.database.windows.net,1433;Database=sqldb-dev-todoapp69420;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"   
 
 
